@@ -1,0 +1,119 @@
+    .heading-1.home-hero-heading {
+    max-width: 938px;
+    margin-bottom: 32px;
+}
+.heading-1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 40pt;
+    line-height: 72px;
+    font-weight: 700;
+}
+
+.heading-2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 24pt;
+    font-weight: 700;
+}
+
+.heading-3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 12pt;
+    font-weight: 600;
+    letter-spacing: 1pt;
+}
+
+.body-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 16pt;
+
+}
+
+.btn-cta {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #67748e;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.625rem 1.25rem;
+    font-size: .875rem;
+    border-radius: 0.5rem;
+    transition: all .15s ease-in;
+    margin-bottom: 1rem;
+    letter-spacing: -.025rem;
+    text-transform: none;  
+}
+
+
+.btn-big {
+padding: 0.875rem 4rem;
+    font-size: 14pt;
+    border-radius: 0.5rem;
+}
+
+
+/*yellow button*/
+.btn-ic {
+    color: rgb(43, 43, 43);
+    background-color: hsl(34, 96%, 62%);
+    border-color:hsl(34, 96%, 62%);
+}
+
+.btn-ic:hover {
+    font-size: 14pt;
+    color:rgb(255, 153, 0);
+    background-color: rgba(28, 26, 39, 0.904);
+    border-color:rgba(28, 26, 39, 0.904);
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    box-shadow: 0 4px 6px rgba(29, 29, 59, 0.1), 0 1px 3px rgba(20, 19, 19, 0.08);
+}
+
+/*yellow button end*/
+
+/*faint yellow button*/
+.btn-ic-faint {
+    color: #ea6f31;
+    background-color: #f7d5aa;
+    border-color:#f7d5aa;
+}
+
+/*faint yellow button end*/
+
+h1,h2,h3,h4,p {
+    font-family: 'Poppins', sans-serif;
+    color:#383635;
+}
+
+.circle-yellow {
+    display: inline-block;
+    height: 5rem;
+    width: 5rem;
+    padding: 1rem;
+    background-color:#fff1c8;
+    border-radius: 8rem;
+    color: rgb(255, 123, 0);
+    font-size: 24pt;
+    text-align: center;
+}
+
+.nav-text{
+    font-size: 10pt;
+    color:#95979b;
+}
