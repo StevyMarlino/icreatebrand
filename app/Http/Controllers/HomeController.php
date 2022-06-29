@@ -8,7 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('icreate.index');
+        $data = [
+            'posts' => \TCG\Voyager\Models\Post::where('status','PUBLISHED')->orderBy('created_at','desc')->paginate(3)
+        ];
+        return view('icreate.index',$data);
     }
 
     public function contact()
