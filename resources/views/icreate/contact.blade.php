@@ -62,16 +62,20 @@
                                                 <div class="col-12 col-sm-12 mt-4 mt-sm-0 text-start">
                                                     <label>First Name</label>
                                                     <input class="multisteps-form__input form-control mb-3" type="text"
+                                                           id="name" required
                                                            placeholder="Eg. Michael">
                                                     <label>Last Name</label>
                                                     <input class="multisteps-form__input form-control mb-3" type="text"
+                                                           id="last_name" required
                                                            placeholder="Eg. Tomson">
                                                     <label>Email Address</label>
                                                     <input class="multisteps-form__input form-control" type="email"
+                                                           id="email" required
                                                            placeholder="Eg. argon@dashboard.com">
                                                     <label>Phone number</label>
-                                                    <input class="multisteps-form__input form-control" type="email"
-                                                           placeholder="Eg. argon@dashboard.com">
+                                                    <input class="multisteps-form__input form-control" type="number"
+                                                           id="phone" required
+                                                           placeholder="695782628">
                                                 </div>
                                             </div>
                                             <div class="button-row d-flex mt-4">
@@ -98,38 +102,42 @@
                                         <div class="multisteps-form__content">
                                             <div class="row mt-4 text-center">
                                                 <div class="col-sm-6 mb-3">
-                                                    <input type="checkbox" class="btn-check" id="btncheck1"
+                                                    <input type="radio" name="type" value="UX-UI" class="btn-check type"
+                                                           id="choix1"
                                                            autocomplete="off">
                                                     <label class="btn btn-lg btn-outline-secondary border-2 px-3 py-2"
-                                                           for="btncheck1">
+                                                           for="choix1">
                                                         <i class="fas fa-mobile-alt"></i>
                                                     </label>
                                                     <h6>UI/UX</h6>
                                                 </div>
                                                 <div class="col-sm-6 mb-3">
-                                                    <input type="checkbox" class="btn-check" id="btncheck2"
-                                                           autocomplete="off">
+                                                    <input type="radio" name="type" value="Logo-Branding"
+                                                           class="btn-check type"
+                                                           id="choix2" autocomplete="off">
                                                     <label
                                                         class="btn btn-lg btn-outline-secondary border-2 border-2 px-3 py-2"
-                                                        for="btncheck2">
+                                                        for="choix2">
                                                         <i class="fas fa-file-certificate"></i>
                                                     </label>
                                                     <h6>Logo/branding</h6>
                                                 </div>
                                                 <div class="col-sm-6 mb-3">
-                                                    <input type="checkbox" class="btn-check" id="btncheck3"
-                                                           autocomplete="off">
+                                                    <input type="radio" name="type" value="Flyer-Poster"
+                                                           class="btn-check type"
+                                                           id="choix3" autocomplete="off">
                                                     <label class="btn btn-lg btn-outline-secondary border-2 px-3 py-2"
-                                                           for="btncheck3">
+                                                           for="choix3">
                                                         <i class="fas fa-images"></i>
                                                     </label>
                                                     <h6>Flyer/poster</h6>
                                                 </div>
                                                 <div class="col-sm-6 mb-3">
-                                                    <input type="checkbox" class="btn-check" id="btncheck4"
-                                                           autocomplete="off">
+                                                    <input type="radio" name="type" value="Packaging-Design"
+                                                           class="btn-check type"
+                                                           id="choix4" autocomplete="off">
                                                     <label class="btn btn-lg btn-outline-secondary border-2 px-3 py-2"
-                                                           for="btncheck4">
+                                                           for="choix4">
                                                         <i class="fas fa-box"></i>
                                                     </label>
                                                     <h6>Packaging design</h6>
@@ -162,13 +170,11 @@
                                         </div>
                                         <div class="multisteps-form__content">
                                             <div class="row text-start">
-                                                <form>
-                                                    <div class="form-group">
+                                                <div class="form-group">
 
-                                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                        <textarea id="message" class="form-control"
                                                                   rows="3"></textarea>
-                                                    </div>
-                                                </form>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="button-row d-flex mt-4 col-12">
@@ -176,7 +182,9 @@
                                                             title="Prev">
                                                         Prev
                                                     </button>
-                                                    <button class="btn bg-gradient-warning ms-auto mb-0" type="button"
+
+                                                    <button onclick="sendMessage()"
+                                                            class="btn bg-gradient-warning ms-auto mb-0" type="button"
                                                             title="Send">
                                                         Send
                                                     </button>
@@ -192,5 +200,23 @@
                     <!-- wizard-form -->
                 </div>
             </div> <!--  big container -->
+
+            @endsection
+
+            @section('js')
+
+                <script type="text/javascript">
+                    function sendMessage() {
+                        let name = document.getElementById("name").value;
+                        let last_name = document.getElementById("last_name").value;
+                        let email = document.getElementById("email").value;
+                        let phone = document.getElementById("phone").value;
+                        let type = document.querySelector('input[name="type"]:checked').value;
+                        let message = document.getElementById('message').value;
+
+                        var win = window.open(`https://wa.me/+23799486948?text=name : ${name} \n last name : ${last_name} \n email : ${email} \n phone : ${phone} \n type : ${type} \n message : ${message}`, '_blank');
+                        win.focus()
+                    }
+                </script>
 
 @endsection

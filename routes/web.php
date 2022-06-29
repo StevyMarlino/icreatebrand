@@ -27,6 +27,13 @@ Route::controller(\App\Http\Controllers\ServiceController::class)
         Route::get('details/{slug}', 'details')->name('details');
     });
 
+Route::controller(\App\Http\Controllers\BlogController::class)
+    ->prefix('blog')
+    ->group(function () {
+        Route::get('posts','index')->name('blog.posts');
+        Route::get('details/{slug}','details')->name('details.post');
+    });
+
 Route::group(['prefix' => 'icreate-manage'], function () {
     Voyager::routes();
 });

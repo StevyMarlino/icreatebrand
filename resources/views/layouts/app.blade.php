@@ -80,7 +80,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('blog.posts') }}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About us</a>
@@ -96,7 +96,7 @@
         </div>
     </nav>
     <!-- hero content -->
-    @if(request()->routeIs('home'))
+    @if(request()->routeIs('home') || request()->routeIs('blog.posts'))
         <div style="padding-top: 8rem;">
             <div class="container">
                 <div class="row">
@@ -219,5 +219,6 @@
 <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 <script src="{{ asset('assets/js/multistep-form.js') }}" type="text/javascript"></script>
 
+@yield('js')
 </body>
 </html>
